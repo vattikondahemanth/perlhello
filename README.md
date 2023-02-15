@@ -1,4 +1,4 @@
 # To run 
-# plackup -r
+plackup -r
 # To check perl libraries path
-# perl -E "print \"@INC\""
+perl -E "print \"@INC\""
