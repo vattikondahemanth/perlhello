@@ -1,0 +1,43 @@
+our ($_class_cmeta, $m, $_m_buffer, $_interp);
+BEGIN { 
+local $_interp = Mason::Interp->current_load_interp;
+$_interp->component_moose_class->import;
+$_interp->component_import_class->import;
+}
+*m = \$Mason::Request::current_request;
+*_m_buffer = \$Mason::Request::current_buffer;
+sub _inner { inner() }
+method _set_class_cmeta ($interp) {
+$_class_cmeta = $interp->component_class_meta_class->new(
+'class' => CLASS,
+'dir_path' => '/',
+'interp' => $interp,
+'is_top_level' => '0',
+'object_file' => __FILE__,
+'path' => '/all_articles.mi',
+'source_file' => 'C:/Users/vatti/Desktop/Perl_scripts/Perl_Hello/comps/all_articles.mi',
+);
+}
+sub _unset_class_cmeta { undef $_class_cmeta }
+sub _class_cmeta { $_class_cmeta }
+method main  {
+#line 1 "C:/Users/vatti/Desktop/Perl_scripts/Perl_Hello/comps/all_articles.mi"
+$$_m_buffer .= '<p>Article 1</p>
+<p>Article 2</p>
+<p>Article 3</p>
+
+
+';
+#line 6 "C:/Users/vatti/Desktop/Perl_scripts/Perl_Hello/comps/all_articles.mi"
+$self->m->_apply_filters_to_output(  $self->HTMLParaBreak  , sub {
+#line 6 "C:/Users/vatti/Desktop/Perl_scripts/Perl_Hello/comps/all_articles.mi"
+$$_m_buffer .= 'First paragraph.
+   
+Second paragraph.
+';
+
+;return;
+});
+
+;return;
+}
