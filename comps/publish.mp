@@ -14,5 +14,5 @@ method handle () {
           ( title => $.title, content => $.content, create_time => time() );
       $article->save;
       $session->{message} = sprintf( "Article '%s' saved.", $.title );
-      $m->redirect('/');
+      $m->redirect('/new_article');
 }

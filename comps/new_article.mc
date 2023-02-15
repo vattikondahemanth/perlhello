@@ -14,7 +14,12 @@
 	  <a href="/">Back to Home</a>
 	  <br />
 	  <br />
-	  <% $m -> req -> session -> {message} %>
+	  <h2 style="color:#069">
+		<% $m -> req -> session -> {message} %>
+	  </h2>
+	
+	</br>
+	</br>
     </form>
     
   </body>

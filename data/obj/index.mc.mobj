@@ -24,41 +24,33 @@ method main  {
 #line 5 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 
 	my $session = $m->req->session;
+	$session->{message} = "";
 
 #line 1 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $$_m_buffer .= '<html>
    <head>
      <link rel="stylesheet" href="/static/css/blog.css">
      <title>My Blog: Home</title>';
-#line 8 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+#line 9 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $$_m_buffer .= '   </head>
    <body>
     
      <h2>Welcome to my blog.</h2>
 	 Hello world! The local time is ';
-#line 12 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+#line 13 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 for (scalar(scalar(localtime))) { $$_m_buffer .= $_ if defined }
-#line 12 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+#line 13 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $$_m_buffer .= '.
 	';
-#line 13 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+#line 14 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $m->comp(   'all_articles.mi'  
-); #line 13 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+); #line 14 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $$_m_buffer .= '
 	</br>
 	</br>
 	
 	
-	<h2 style="color:#069">
-	';
-#line 19 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
-for (scalar($m -> req -> session -> {message})) { $$_m_buffer .= $_ if defined }
-#line 19 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
-$$_m_buffer .= '
-    </h2>
 	
-	</br>
-	</br>
 	
 	<a href="/new_article">Add an article</a>
 

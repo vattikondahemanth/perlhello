@@ -38,11 +38,16 @@ $$_m_buffer .= '<html>
 	  <a href="/">Back to Home</a>
 	  <br />
 	  <br />
-	  ';
-#line 17 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
+	  <h2 style="color:#069">
+		';
+#line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
 for (scalar($m -> req -> session -> {message})) { $$_m_buffer .= $_ if defined }
-#line 17 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
+#line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
 $$_m_buffer .= '
+	  </h2>
+	
+	</br>
+	</br>
     </form>
     
   </body>

@@ -4,6 +4,7 @@
      <title>My Blog: Home</title>
 <%init>
 	my $session = $m->req->session;
+	$session->{message} = "";
 </%init>
    </head>
    <body>
@@ -15,12 +16,7 @@
 	</br>
 	
 	
-	<h2 style="color:#069">
-	<% $m -> req -> session -> {message} %>
-    </h2>
 	
-	</br>
-	</br>
 	
 	<a href="/new_article">Add an article</a>
 
