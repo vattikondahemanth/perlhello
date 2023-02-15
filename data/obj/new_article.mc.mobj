@@ -15,22 +15,35 @@ $_class_cmeta = $interp->component_class_meta_class->new(
 'is_top_level' => '1',
 'object_file' => __FILE__,
 'path' => '/new_article.mc',
-'source_file' => 'C:/Users/vatti/Desktop/Perl_scripts/Perl_Hello/comps/new_article.mc',
+'source_file' => 'C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc',
 );
 }
 sub _unset_class_cmeta { undef $_class_cmeta }
 sub _class_cmeta { $_class_cmeta }
 method main  {
-#line 1 "C:/Users/vatti/Desktop/Perl_scripts/Perl_Hello/comps/new_article.mc"
+#line 1 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
 $$_m_buffer .= '<html>
    <head>
      <link rel="stylesheet" href="/static/css/blog.css">
      <title>My Blog: Home</title>
    </head>
    <body>
-   
      <h2>This is article Page</h2>
-
+	 <form action="publish" type="POST">
+      <input type="text" id="content" class="fadeIn second" name="content" placeholder="login">
+      <input type="text" id="title" class="fadeIn third" name="title" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+	  <br />
+	  <br />
+	  <a href="/">Back to Home</a>
+	  <br />
+	  <br />
+	  ';
+#line 17 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
+for (scalar($m -> req -> session -> {message})) { $$_m_buffer .= $_ if defined }
+#line 17 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
+$$_m_buffer .= '
+    </form>
     
   </body>
 </html>';

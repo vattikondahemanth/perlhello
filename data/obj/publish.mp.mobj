@@ -1,0 +1,41 @@
+our ($_class_cmeta, $m, $_m_buffer, $_interp);
+BEGIN { 
+local $_interp = Mason::Interp->current_load_interp;
+$_interp->component_moose_class->import;
+$_interp->component_import_class->import;
+}
+*m = \$Mason::Request::current_request;
+*_m_buffer = \$Mason::Request::current_buffer;
+sub _inner { inner() }
+method _set_class_cmeta ($interp) {
+$_class_cmeta = $interp->component_class_meta_class->new(
+'class' => CLASS,
+'dir_path' => '/',
+'interp' => $interp,
+'is_top_level' => '1',
+'object_file' => __FILE__,
+'path' => '/publish.mp',
+'source_file' => 'C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/publish.mp',
+);
+}
+sub _unset_class_cmeta { undef $_class_cmeta }
+sub _class_cmeta { $_class_cmeta }
+#line 1 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/publish.mp"
+ has 'content';
+has 'title';
+use Article;
+
+method handle () {
+	  my $session = $m->req->session;
+	  print $session;
+      if ( ! $self->content  || ! $self->title  ) {
+          $session->{message} = "Login and Password required.";
+          $session->{form_data} =  $self->args ;
+          $m->redirect('/new_article');
+      }
+      my $article = Article->new
+          ( title =>  $self->title , content =>  $self->content , create_time => time() );
+      $article->save;
+      $session->{message} = sprintf( "Article '%s' saved.",  $self->title  );
+      $m->redirect('/');
+}

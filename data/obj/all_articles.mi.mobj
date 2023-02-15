@@ -15,22 +15,35 @@ $_class_cmeta = $interp->component_class_meta_class->new(
 'is_top_level' => '0',
 'object_file' => __FILE__,
 'path' => '/all_articles.mi',
-'source_file' => 'C:/Users/vatti/Desktop/Perl_scripts/Perl_Hello/comps/all_articles.mi',
+'source_file' => 'C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi',
 );
 }
 sub _unset_class_cmeta { undef $_class_cmeta }
 sub _class_cmeta { $_class_cmeta }
+#line 1 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+
+has 'foo';
+has 'baz' => (isa => 'Int', default => 17);
 method main  {
-#line 1 "C:/Users/vatti/Desktop/Perl_scripts/Perl_Hello/comps/all_articles.mi"
-$$_m_buffer .= '<p>Article 1</p>
+#line 6 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+
+my $value = 999999;
+
+#line 10 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+for (scalar( $self->baz )) { $$_m_buffer .= $_ if defined }
+#line 10 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+$$_m_buffer .= '
+
+
+<p>Article 1</p>
 <p>Article 2</p>
 <p>Article 3</p>
 
 
 ';
-#line 6 "C:/Users/vatti/Desktop/Perl_scripts/Perl_Hello/comps/all_articles.mi"
+#line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
 $self->m->_apply_filters_to_output(  $self->HTMLParaBreak  , sub {
-#line 6 "C:/Users/vatti/Desktop/Perl_scripts/Perl_Hello/comps/all_articles.mi"
+#line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
 $$_m_buffer .= 'First paragraph.
    
 Second paragraph.

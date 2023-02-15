@@ -2,6 +2,8 @@
  use Cwd qw(realpath);
  use File::Basename;
  use Mason;
+ use HTML::Mason;
+ use HTML::Mason::Request;
  use Plack::Builder;
  use warnings;
  use strict;
@@ -16,6 +18,9 @@ my $interp = Mason->new(
     data_dir  => "$cwd/data",
     plugins   => \@plugins,
 );
+
+
+unshift(@INC, "$cwd/lib");
  
 # PSGI app
 my $app = sub {
@@ -23,6 +28,6 @@ my $app = sub {
     $interp->handle_psgi($env);
 };
 builder {
-    # Include PSGI middleware here
+    enable 'Session';
     $app;
 };

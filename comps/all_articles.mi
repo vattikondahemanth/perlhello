@@ -1,3 +1,15 @@
+<%class>
+has 'foo';
+has 'baz' => (isa => 'Int', default => 17);
+</%class>
+
+<%init>
+my $value = 999999;
+</%init>
+
+<% $.baz %>
+
+
 <p>Article 1</p>
 <p>Article 2</p>
 <p>Article 3</p>
