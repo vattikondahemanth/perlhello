@@ -8,11 +8,12 @@ my $value = 999999;
 use Article;
 
 my @articles = @{ Article -> get_articles(1, 10) } ;
-
+my $output = $m->scomp('othercomponent.mi');
 
 </%init>
 
 <% $.baz %>
+<% $output %>
 
 % if (@articles) {
 <b>Showing <% scalar(@articles) %> article<% @articles > 1 ? "s" : "" %>.</b>
