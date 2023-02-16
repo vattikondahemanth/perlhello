@@ -34,7 +34,7 @@ method handle () {
           $m->redirect('/new_article');
       }
       my $article = Article->new
-          (   $self->title ,  $self->content , create_time => time() );
+          (  $self->title ,   $self->content , create_time => time() );
       $article->save;
       $session->{message} = sprintf( "Article with the Title: '%s' saved.",  $self->title  );
       $m->redirect('/new_article');

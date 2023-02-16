@@ -28,22 +28,60 @@ method main  {
 #line 6 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
 
 my $value = 999999;
+use Article;
 
-#line 10 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+my @articles = @{ Article -> get_articles(1, 10) } ;
+
+
+
+#line 15 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
 for (scalar( $self->baz )) { $$_m_buffer .= $_ if defined }
-#line 10 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+#line 15 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
 $$_m_buffer .= '
 
-
-<p>Article 1</p>
-<p>Article 2</p>
-<p>Article 3</p>
-
+';
+#line 17 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+ if (@articles) {
+$$_m_buffer .= '<b>Showing ';
+#line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+for (scalar(scalar(@articles))) { $$_m_buffer .= $_ if defined }
+#line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+$$_m_buffer .= ' article';
+#line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+for (scalar(@articles > 1 ? "s" : "")) { $$_m_buffer .= $_ if defined }
+#line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+$$_m_buffer .= '.</b>
+<ul class="articles">
+';
+#line 20 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+   foreach my $article (@articles) {
+$$_m_buffer .= '  <li>';
+#line 21 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+for (scalar($article -> {_title})) { $$_m_buffer .= $_ if defined }
+#line 21 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+$$_m_buffer .= '  ';
+#line 21 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+for (scalar($article -> {_content})) { $$_m_buffer .= $_ if defined }
+#line 21 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+$$_m_buffer .= '</li>
+';
+#line 22 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+   }
+$$_m_buffer .= '</ul>
+';
+#line 24 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+ }
+ else {
+$$_m_buffer .= '<p>No articles yet.</p>
+';
+#line 27 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+ }
+$$_m_buffer .= '
 
 ';
-#line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+#line 30 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
 $self->m->_apply_filters_to_output(  $self->HTMLPara  , sub {
-#line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+#line 30 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
 $$_m_buffer .= 'First paragraph.
    
 Second paragraph.

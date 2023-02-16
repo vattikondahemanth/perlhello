@@ -5,14 +5,26 @@ has 'baz' => (isa => 'Int', default => 17);
 
 <%init>
 my $value = 999999;
+use Article;
+
+my @articles = @{ Article -> get_articles(1, 10) } ;
+
+
 </%init>
 
 <% $.baz %>
 
-
-<p>Article 1</p>
-<p>Article 2</p>
-<p>Article 3</p>
+% if (@articles) {
+<b>Showing <% scalar(@articles) %> article<% @articles > 1 ? "s" : "" %>.</b>
+<ul class="articles">
+%   foreach my $article (@articles) {
+  <li><% $article -> {_title} %>  <% $article -> {_content} %></li>
+%   }
+</ul>
+% }
+% else {
+<p>No articles yet.</p>
+% }
 
 
 % $.HTMLPara {{
