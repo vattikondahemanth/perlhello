@@ -42,7 +42,7 @@ $$_m_buffer .= '
 
 ';
 #line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
-$self->m->_apply_filters_to_output(  $self->HTMLParaBreak  , sub {
+$self->m->_apply_filters_to_output(  $self->HTMLPara  , sub {
 #line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
 $$_m_buffer .= 'First paragraph.
    

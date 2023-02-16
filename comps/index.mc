@@ -9,16 +9,27 @@
    </head>
    <body>
     
-     <h2>Welcome to my blog.</h2>
-	 Hello world! The local time is <% scalar(localtime) %>.
+     <h2>Create Article Application.</h2>
+	 The local time is <% scalar(localtime) %>.
 	<& all_articles.mi &>
 	</br>
 	</br>
 	
 	
-	
+% $.HTMLPara {{
+First paragraph.
+   
+Second paragraph.
+% }}
+
+
 	
 	<a href="/new_article">Add an article</a>
-
+	</br>
+	</br>
+	
+	
   </body>
+ 
+
 </html>

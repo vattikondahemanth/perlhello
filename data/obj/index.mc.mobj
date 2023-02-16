@@ -35,8 +35,8 @@ $$_m_buffer .= '<html>
 $$_m_buffer .= '   </head>
    <body>
     
-     <h2>Welcome to my blog.</h2>
-	 Hello world! The local time is ';
+     <h2>Create Article Application.</h2>
+	 The local time is ';
 #line 13 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 for (scalar(scalar(localtime))) { $$_m_buffer .= $_ if defined }
 #line 13 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
@@ -50,11 +50,28 @@ $$_m_buffer .= '
 	</br>
 	
 	
-	
+';
+#line 19 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+$self->m->_apply_filters_to_output(  $self->HTMLPara  , sub {
+#line 19 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+$$_m_buffer .= 'First paragraph.
+   
+Second paragraph.
+';
+
+;return;
+});
+#line 19 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+$$_m_buffer .= '
 	
 	<a href="/new_article">Add an article</a>
-
+	</br>
+	</br>
+	
+	
   </body>
+ 
+
 </html>';
 
 ;return;

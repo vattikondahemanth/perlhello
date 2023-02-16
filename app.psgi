@@ -5,6 +5,8 @@
  use HTML::Mason;
  use HTML::Mason::Request;
  use Plack::Builder;
+ use Template;
+ 
  use warnings;
  use strict;
    

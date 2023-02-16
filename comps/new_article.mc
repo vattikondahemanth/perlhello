@@ -6,9 +6,12 @@
    <body>
      <h2>This is article Page</h2>
 	 <form action="publish" type="POST">
-      <input type="text" id="content" class="fadeIn second" name="content" placeholder="login">
-      <input type="text" id="title" class="fadeIn third" name="title" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+	  <input type="text" id="title" class="fadeIn third" name="title" placeholder="Enter your title">
+	  <br />
+      <input type="text" id="content" class="fadeIn second" name="content" placeholder="Enter your content">
+	  <br />
+	  <br />
+      <input type="submit" class="fadeIn fourth" value="Create Article">
 	  <br />
 	  <br />
 	  <a href="/">Back to Home</a>

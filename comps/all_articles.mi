@@ -15,7 +15,7 @@ my $value = 999999;
 <p>Article 3</p>
 
 
-% $.HTMLParaBreak {{
+% $.HTMLPara {{
 First paragraph.
    
 Second paragraph.

@@ -13,6 +13,6 @@ method handle () {
       my $article = Article->new
           ( title => $.title, content => $.content, create_time => time() );
       $article->save;
-      $session->{message} = sprintf( "Article '%s' saved.", $.title );
+      $session->{message} = sprintf( "Article with the Title: '%s' saved.", $.title );
       $m->redirect('/new_article');
 }
