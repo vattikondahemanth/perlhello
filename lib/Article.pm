@@ -10,7 +10,7 @@ sub new {
    my $self = {
       _title => shift,
       _content  => shift,
-    
+
    };
 
    

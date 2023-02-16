@@ -29,12 +29,12 @@ method handle () {
 	  my $session = $m->req->session;
 	  print $session;
       if ( ! $self->content  || ! $self->title  ) {
-          $session->{message} = "Login and Password required.";
+          $session->{message} = "Title and Content required.";
           $session->{form_data} =  $self->args ;
           $m->redirect('/new_article');
       }
       my $article = Article->new
-          ( title =>  $self->title , content =>  $self->content , create_time => time() );
+          (   $self->title ,  $self->content , create_time => time() );
       $article->save;
       $session->{message} = sprintf( "Article with the Title: '%s' saved.",  $self->title  );
       $m->redirect('/new_article');

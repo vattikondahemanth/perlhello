@@ -31,29 +31,29 @@ $$_m_buffer .= '<html>
    <head>
      <link rel="stylesheet" href="/static/css/blog.css">
      <title>My Blog: Home</title>';
-#line 9 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+#line 10 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $$_m_buffer .= '   </head>
    <body>
     
      <h2>Create Article Application.</h2>
 	 The local time is ';
-#line 13 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+#line 14 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 for (scalar(scalar(localtime))) { $$_m_buffer .= $_ if defined }
-#line 13 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+#line 14 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $$_m_buffer .= '.
 	';
-#line 14 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+#line 15 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $m->comp(   'all_articles.mi'  
-); #line 14 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+); #line 15 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $$_m_buffer .= '
 	</br>
 	</br>
 	
 	
 ';
-#line 19 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+#line 20 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $self->m->_apply_filters_to_output(  $self->HTMLPara  , sub {
-#line 19 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+#line 20 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $$_m_buffer .= 'First paragraph.
    
 Second paragraph.
@@ -61,7 +61,7 @@ Second paragraph.
 
 ;return;
 });
-#line 19 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
+#line 20 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $$_m_buffer .= '
 	
 	<a href="/new_article">Add an article</a>
@@ -72,7 +72,8 @@ $$_m_buffer .= '
   </body>
  
 
-</html>';
+</html>
+';
 
 ;return;
 }

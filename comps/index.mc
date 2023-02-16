@@ -6,6 +6,7 @@
 	my $session = $m->req->session;
 	$session->{message} = "";
 </%init>
+
    </head>
    <body>
     
