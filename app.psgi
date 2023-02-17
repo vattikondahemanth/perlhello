@@ -6,6 +6,7 @@
  use HTML::Mason::Request;
  use Plack::Builder;
  use Template;
+ use Path::Router;
  
  use warnings;
  use strict;
@@ -23,13 +24,14 @@ my $interp = Mason->new(
 
 
 unshift(@INC, "$cwd/lib");
- 
-# PSGI app
+
+
 my $app = sub {
     my $env = shift;
     $interp->handle_psgi($env);
 };
+
 builder {
     enable 'Session';
-    $app;
+	$app;
 };

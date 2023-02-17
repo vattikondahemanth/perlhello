@@ -55,6 +55,7 @@ sub save {
 }
 
 sub get_articles {
+	warn("============= get_articles is being executed!\n");
 	my @result;
 	my ($self, $p1, $p2) = @_;
 	$p1 = ($p1 - 1) * $p2;
@@ -74,5 +75,10 @@ sub get_articles {
 	$dbh->disconnect();
 	
 	return \@result;
+	
+}
+
+
+sub index(){
 	
 }
