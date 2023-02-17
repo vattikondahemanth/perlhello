@@ -1,0 +1,64 @@
+our ($_class_cmeta, $m, $_m_buffer, $_interp);
+BEGIN { 
+local $_interp = Mason::Interp->current_load_interp;
+$_interp->component_moose_class->import;
+$_interp->component_import_class->import;
+}
+*m = \$Mason::Request::current_request;
+*_m_buffer = \$Mason::Request::current_buffer;
+sub _inner { inner() }
+method _set_class_cmeta ($interp) {
+$_class_cmeta = $interp->component_class_meta_class->new(
+'class' => CLASS,
+'dir_path' => '/',
+'interp' => $interp,
+'is_top_level' => '1',
+'object_file' => __FILE__,
+'path' => '/dhandler.mc',
+'source_file' => 'C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/dhandler.mc',
+);
+}
+sub _unset_class_cmeta { undef $_class_cmeta }
+sub _class_cmeta { $_class_cmeta }
+
+method main  {
+#line 5 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/dhandler.mc"
+
+
+warn("============dhandler is being executed!\n");
+my $my_request = $m->req;
+
+warn($my_request);
+# use Data::Dumper;
+# warn(Dumper($my_request));
+
+my $path = $my_request->{'env'}->{'REQUEST_URI'};
+
+warn($path);
+
+
+
+my ($component) = $path =~ m{^/(\w+)}; # Extract the first word after the /
+$component ||= "index"; # Default to "index" if no component is specified
+
+
+
+
+if ($path =~ m{^/dhandler}) {
+	$m->redirect('index.mc');
+}
+elsif ($path =~ m{^/add}) {
+    $m->comp('new_article.mc');
+}
+
+elsif ($path =~ m{^/bar}) {
+    $m->comp('bar.mc');
+}
+else {
+    $m->comp('404.mc');
+}
+
+
+
+;return;
+}

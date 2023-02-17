@@ -5,6 +5,7 @@
  use HTML::Mason;
  use HTML::Mason::Request;
  use Plack::Builder;
+ use Plack::App::File;
  use Template;
  use Path::Router;
  
@@ -33,5 +34,6 @@ my $app = sub {
 
 builder {
     enable 'Session';
-	$app;
+	mount "/images" => Plack::App::File->new( root => "$cwd/static/images" );
+	mount "/" => $app;
 };
