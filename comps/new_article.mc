@@ -4,6 +4,13 @@
      <title>My Blog: Home</title>
    </head>
    <body>
+
+<%init>
+
+warn("============new_article is being executed!\n");
+
+</%init>
+
      <h2>This is article Page</h2>
 	 <form action="publish" type="POST">
 	  <input type="text" id="title" class="fadeIn third" name="title" placeholder="Enter your title">

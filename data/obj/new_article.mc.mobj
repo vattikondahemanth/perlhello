@@ -21,6 +21,12 @@ $_class_cmeta = $interp->component_class_meta_class->new(
 sub _unset_class_cmeta { undef $_class_cmeta }
 sub _class_cmeta { $_class_cmeta }
 method main  {
+#line 8 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
+
+
+warn("============new_article is being executed!\n");
+
+
 #line 1 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
 $$_m_buffer .= '<html>
    <head>
@@ -28,7 +34,9 @@ $$_m_buffer .= '<html>
      <title>My Blog: Home</title>
    </head>
    <body>
-     <h2>This is article Page</h2>
+';
+#line 14 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
+$$_m_buffer .= '     <h2>This is article Page</h2>
 	 <form action="publish" type="POST">
 	  <input type="text" id="title" class="fadeIn third" name="title" placeholder="Enter your title">
 	  <br />
@@ -43,9 +51,9 @@ $$_m_buffer .= '<html>
 	  <br />
 	  <h2 style="color:#069">
 		';
-#line 21 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
+#line 28 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
 for (scalar($m -> req -> session -> {message})) { $$_m_buffer .= $_ if defined }
-#line 21 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
+#line 28 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/new_article.mc"
 $$_m_buffer .= '
 	  </h2>
 	

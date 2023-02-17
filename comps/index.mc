@@ -25,7 +25,7 @@ Second paragraph.
 
 
 	
-	<a href="/new_article">Add an article</a>
+	<a href="/create">Add an article</a>
 	</br>
 	</br>
 	

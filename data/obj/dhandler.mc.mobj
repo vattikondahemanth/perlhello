@@ -45,7 +45,13 @@ $component ||= "index"; # Default to "index" if no component is specified
 
 
 if ($path =~ m{^/dhandler}) {
-	$m->redirect('index.mc');
+	$m->redirect('index');
+}
+elsif ($path =~ m{^/create}) {
+    $m->comp('new_article.mc');
+}
+elsif ($path =~ m{^/cancel}) {
+    $m->redirect('/');
 }
 elsif ($path =~ m{^/add}) {
     $m->comp('new_article.mc');

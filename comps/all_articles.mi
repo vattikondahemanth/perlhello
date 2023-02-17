@@ -7,7 +7,11 @@ has 'baz' => (isa => 'Int', default => 17);
 my $value = 999999;
 use Article;
 
-my @articles = @{ Article -> get_articles(1, 10) } ;
+
+my @articles = @{ Article -> get_articles(1, 10) };
+my @commits =  Article -> get_commits() ;
+
+
 my $output = $m->scomp('othercomponent.mi');
 
 </%init>
@@ -26,6 +30,22 @@ my $output = $m->scomp('othercomponent.mi');
 % else {
 <p>No articles yet.</p>
 % }
+
+
+% if (@commits) {
+
+<ul class="commits">
+%   foreach my $commit (@commits) {
+  <li><b>Name-> </b> <% $$commit{'name'} %>  <b>Message-></b> <% $$commit{'message'} %> <b>Date-></b> <% $$commit{'date'} %></li>
+%   }
+</ul>
+
+% }
+% else {
+<p>No commits yet.</p>
+% }
+
+
 
 
 % $.HTMLPara {{

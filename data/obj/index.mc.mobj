@@ -64,7 +64,7 @@ Second paragraph.
 #line 20 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/index.mc"
 $$_m_buffer .= '
 	
-	<a href="/new_article">Add an article</a>
+	<a href="/create">Add an article</a>
 	</br>
 	</br>
 	

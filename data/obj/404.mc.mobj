@@ -45,7 +45,7 @@ html, body
 	</tr>
     <tr>
         <td style="text-align: center; vertical-align: middle;">
-            <img src="http://localhost:5000/images/404.jpg" />
+            <img src="/images/404.jpg" />
         </td>
     </tr>
 </table>
