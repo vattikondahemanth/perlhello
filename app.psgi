@@ -8,12 +8,13 @@
  use Plack::App::File;
  use Template;
  use Path::Router;
+ use Mason::Plugin::RouterSimple;
  
  use warnings;
  use strict;
    
  # Include Mason plugins here
-my @plugins = ('PSGIHandler', 'HTMLFilters');
+my @plugins = ('PSGIHandler', 'HTMLFilters', 'RouterSimple');
   
 # Create Mason object
 my $cwd = dirname( realpath(__FILE__) );

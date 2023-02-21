@@ -46,7 +46,9 @@ my $output = $m->scomp('othercomponent.mi');
 % }
 
 
-
+<a href="/editcomponent/news/2010/02">edit</a>
+<br/>
+<a href="http://localhost:5000/editcomponent?param1=value1&param2=value2&param3=value3">EDIT</a>
 
 % $.HTMLPara {{
 First paragraph.

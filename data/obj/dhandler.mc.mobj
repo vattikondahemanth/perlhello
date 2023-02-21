@@ -22,16 +22,18 @@ sub _unset_class_cmeta { undef $_class_cmeta }
 sub _class_cmeta { $_class_cmeta }
 
 method main  {
-#line 5 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/dhandler.mc"
+#line 6 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/dhandler.mc"
 
-
-warn("============dhandler is being executed!\n");
+my $uri = $m->req->uri;
 my $my_request = $m->req;
 
 warn($my_request);
-# use Data::Dumper;
+use Data::Dumper;
 # warn(Dumper($my_request));
+warn("*********************");
+warn(Dumper($my_request));
 
+# warn($my_request->{'env'});
 my $path = $my_request->{'env'}->{'REQUEST_URI'};
 
 warn($path);

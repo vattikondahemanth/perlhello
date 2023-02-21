@@ -123,12 +123,14 @@ $$_m_buffer .= '<p>No commits yet.</p>
  }
 $$_m_buffer .= '
 
-
+<a href="/editcomponent/news/2010/02">edit</a>
+<br/>
+<a href="http://localhost:5000/editcomponent?param1=value1&param2=value2&param3=value3">EDIT</a>
 
 ';
-#line 51 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+#line 53 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
 $self->m->_apply_filters_to_output(  $self->HTMLPara  , sub {
-#line 51 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
+#line 53 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/all_articles.mi"
 $$_m_buffer .= 'First paragraph.
    
 Second paragraph.
