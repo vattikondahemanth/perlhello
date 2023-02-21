@@ -1,0 +1,61 @@
+our ($_class_cmeta, $m, $_m_buffer, $_interp);
+BEGIN { 
+local $_interp = Mason::Interp->current_load_interp;
+$_interp->component_moose_class->import;
+$_interp->component_import_class->import;
+}
+*m = \$Mason::Request::current_request;
+*_m_buffer = \$Mason::Request::current_buffer;
+sub _inner { inner() }
+method _set_class_cmeta ($interp) {
+$_class_cmeta = $interp->component_class_meta_class->new(
+'class' => CLASS,
+'dir_path' => '/',
+'interp' => $interp,
+'is_top_level' => '1',
+'object_file' => __FILE__,
+'path' => '/deletecomponent.mc',
+'source_file' => 'C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc',
+);
+}
+sub _unset_class_cmeta { undef $_class_cmeta }
+sub _class_cmeta { $_class_cmeta }
+#line 4 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
+
+
+route ":section/{year:[0-9]{4}}/{month:[0-9]{2}}/{article_number:[1-9]+}";
+method main  {
+#line 1 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
+$$_m_buffer .= '<html>
+
+';
+#line 10 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
+$$_m_buffer .= '<body>
+        Section for <b>';
+#line 11 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
+for (scalar( $self->section )) { $$_m_buffer .= $_ if defined }
+#line 11 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
+$$_m_buffer .= '</b>
+        </br>
+        Article Number  for <b>';
+#line 13 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
+for (scalar( $self->article_number )) { $$_m_buffer .= $_ if defined }
+#line 13 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
+$$_m_buffer .= '</b>
+        </br>
+        For the month of ';
+#line 15 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
+for (scalar( $self->month )) { $$_m_buffer .= $_ if defined }
+#line 15 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
+$$_m_buffer .= '/';
+#line 15 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
+for (scalar( $self->year )) { $$_m_buffer .= $_ if defined }
+#line 15 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
+$$_m_buffer .= '
+        </br>
+</body>
+
+</html>';
+
+;return;
+}

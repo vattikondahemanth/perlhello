@@ -22,62 +22,89 @@ sub _unset_class_cmeta { undef $_class_cmeta }
 sub _class_cmeta { $_class_cmeta }
 #line 2 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
 
-# route ":section/{year:[0-9]{4}}/{month:[0-9]{2}}";
-#
+
+route "\?*.*";
 method main  {
-#line 6 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+#line 8 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
 
-
-
-
-# Section for <b><%  $self->section  %></b>
-# Mysection for <b><%  $self->mysection  %></b>
-# For the month of <%  $self->month  %>/<%  $self->year  %>
 
 
 
 
 use URI;
 my $url = URI->new($m->req->{'env'}->{'REQUEST_URI'});
-my %queryform = $url->query_form('param1');
-
+my %queryform = $url->query_form;
 
 
 #line 1 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
-$$_m_buffer .= '<html>
-# ';
-#line 24 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
-$$_m_buffer .= '
-
-   <head>
+$$_m_buffer .= '<html>';
+#line 18 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+$$_m_buffer .= '   <head>
      <link rel="stylesheet" href="/static/css/blog.css">
      <title>My Blog: Home</title>
    </head>
    <body>
+
+';
+#line 24 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+ if ( $self->mysection ) {       
+$$_m_buffer .= '        
+        Section for <b>';
+#line 26 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+for (scalar( $self->section )) { $$_m_buffer .= $_ if defined }
+#line 26 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+$$_m_buffer .= '</b>
+        </br>
+        Mysection for <b>';
+#line 28 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+for (scalar( $self->mysection )) { $$_m_buffer .= $_ if defined }
+#line 28 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+$$_m_buffer .= '</b>
+        </br>
+        For the month of ';
+#line 30 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+for (scalar( $self->month )) { $$_m_buffer .= $_ if defined }
+#line 30 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+$$_m_buffer .= '/';
+#line 30 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+for (scalar( $self->year )) { $$_m_buffer .= $_ if defined }
+#line 30 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+$$_m_buffer .= '
+        </br>
+        
+';
+#line 33 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+ }
+ else {
+$$_m_buffer .= '
         url is  <b>';
-#line 31 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+#line 36 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
 for (scalar($m->req->{'env'}->{'REQUEST_URI'})) { $$_m_buffer .= $_ if defined }
-#line 31 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+#line 36 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
 $$_m_buffer .= '</b>
         <br/>
         param1 is ';
-#line 33 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+#line 38 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
 for (scalar(%queryform{'param1'})) { $$_m_buffer .= $_ if defined }
-#line 33 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+#line 38 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
 $$_m_buffer .= '
         <br/>
         param2 is ';
-#line 35 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+#line 40 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
 for (scalar(%queryform{'param2'})) { $$_m_buffer .= $_ if defined }
-#line 35 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+#line 40 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
 $$_m_buffer .= '
         <br/>
         param3 is ';
-#line 37 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+#line 42 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
 for (scalar(%queryform{'param3'})) { $$_m_buffer .= $_ if defined }
-#line 37 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+#line 42 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
 $$_m_buffer .= '
         <br/>
+';
+#line 44 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/editcomponent.mc"
+ }
+$$_m_buffer .= '        <br/>
         <a href="/">Back to Home</a>
     </body>
 </html>

@@ -28,10 +28,10 @@ my $uri = $m->req->uri;
 my $my_request = $m->req;
 
 warn($my_request);
-use Data::Dumper;
+# use Data::Dumper;
 # warn(Dumper($my_request));
-warn("*********************");
-warn(Dumper($my_request));
+# warn("*********************");
+# warn(Dumper($my_request));
 
 # warn($my_request->{'env'});
 my $path = $my_request->{'env'}->{'REQUEST_URI'};
