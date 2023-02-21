@@ -53,6 +53,8 @@ for (scalar( $self->year )) { $$_m_buffer .= $_ if defined }
 #line 15 "C:/Users/vatti/Desktop/Perl_scripts/perlhello/comps/deletecomponent.mc"
 $$_m_buffer .= '
         </br>
+        </br>
+        <a href="/">Back to Home</a>
 </body>
 
 </html>';
